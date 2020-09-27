@@ -47,5 +47,10 @@ public class AddressBook {
 		 return "Contact update success";
 		 
 	 }
-	 
+public String deleteContact() {
+		 
+		 addressBook.clear();
+		 return "Contact delete success";
+		 
+	 }
 }
