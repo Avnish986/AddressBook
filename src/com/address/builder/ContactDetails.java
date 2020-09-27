@@ -2,14 +2,14 @@ package com.address.builder;
 
 public class ContactDetails {
 	
-		private String f_name;
-		private String l_name;
-		private String address;
-		private String city;
-		private String state;
-		private String zip_code;
-		private String ph_no;
-		private String email;
+		String f_name;
+		String l_name;
+		String address;
+		String city;
+		String state;
+		String zip_code;
+		String ph_no;
+		String email;
 		
 		public ContactDetails() {
 	        
