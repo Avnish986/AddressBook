@@ -13,9 +13,10 @@ public class AddressBookMain {
 		Scanner sc = new Scanner(System.in);
 		boolean switcher = true;
         do {
-		System.out.println("Enter 1 to Add Person details ");
-		System.out.println("Enter 2 to Modify Person details ");
-		System.out.println("Enter 3 to View Person details ");
+		System.out.println("Enter 1 to Add Person details");
+		System.out.println("Enter 2 to Modify Person details");
+		System.out.println("Enter 3 to View Person details");
+		System.out.println("Enter 4 to Delete Person details");
 		System.out.println("Enter 0 to quit ");
 		int choice = sc.nextInt();
 		if(choice !=1 && choice !=0 && choice!=2)
@@ -121,15 +122,43 @@ public class AddressBookMain {
 			else
 			{System.out.println("No such contact found");
 			break;}
-			}	
+			}
+			break;
 				
 		case 3:
 		List<ContactDetails> disp = new ArrayList<ContactDetails>();
 		disp=person.viewContactDetails();
+		if(disp.size()==0)
+		{
+			System.out.println("No details or deleted");
+			break;
+		}
 		for(ContactDetails i:disp)
 			System.out.println(i);
 		break;
 		
+		case 4:
+			ArrayList<ContactDetails> l2 = new ArrayList<ContactDetails>();
+			l2=person.getAddressBook();
+			if(l2.size() == 0) {
+			System.out.println("first add a contact to get deleted");
+			break;
+			}
+			else {
+			System.out.println("Enter fname of contact to be deleted");
+			Scanner del = new Scanner(System.in);
+			String delName=del.nextLine();
+			if(person.checkName(delName))
+			{
+				String s = person.deleteContact();
+				System.out.println(s);
+			}
+			else
+	
+				{System.out.println("No such contact found");
+				break;}
+			}
+			break;
 		case 0:
 	        	switcher=false;
 		}
