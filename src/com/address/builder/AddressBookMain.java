@@ -7,12 +7,13 @@ public class AddressBookMain {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the Address Book");
-		ContactDetails newPerson = new ContactDetails();
+		//ContactDetails newPerson = new ContactDetails();
 		
 		AddressBook person = new AddressBook();
 		Scanner sc = new Scanner(System.in);
 		boolean switcher = true;
         do {
+        ContactDetails newPerson = new ContactDetails();
 		System.out.println("Enter 1 to Add Person details");
 		System.out.println("Enter 2 to Modify Person details");
 		System.out.println("Enter 3 to View Person details");
